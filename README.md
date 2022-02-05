@@ -1,6 +1,6 @@
 # Flutter Tutorial
 
-A demo *flutter project* to learn the basic concepts in flutter.
+A demo *flutter project* **(Shopping Cart)** to learn the basic concepts in flutter.
 
 ### Main concepts
 
