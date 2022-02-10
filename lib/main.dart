@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'catalog.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,32 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: FirstRoute(),
-    );
-  }
-}
-
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Go to Catalog !'),
-          onPressed: () {
-            // Navigate to second route when tapped.
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Catalog()),
-            );
-          },
-        ),
-      ),
+      home: Login(),
     );
   }
 }
