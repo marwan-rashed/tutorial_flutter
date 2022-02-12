@@ -10,3 +10,4 @@ In this tutorial we will cover some basic concepts like
 - Routing / Navigation
 - Images
 - Lists
+- Text Inputs
