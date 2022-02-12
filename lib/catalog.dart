@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'cart.dart';
 
@@ -9,19 +11,20 @@ class Catalog extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catalog'),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Cart()),
+              )
+            },
+          ),
+        ],
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Cart()),
-            );
-          },
-          child: const Text('Go to cart!'),
-        ),
-      ),
+      body: Center(child: Center()),
     );
   }
 }
