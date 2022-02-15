@@ -8,6 +8,5 @@ In this tutorial we will cover some basic concepts like
 - Stateless widgets
 - Stateful widgets
 - Routing / Navigation
-- Images
 - Lists
 - Text Inputs
