@@ -1,7 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class Cart extends StatelessWidget {
-  const Cart({Key? key}) : super(key: key);
+  List products = [];
+  Cart(this.products, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +16,7 @@ class Cart extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             // Navigate back to first route when tapped.
+            print(products);
             Navigator.pop(context);
           },
           child: const Text('Go back!'),

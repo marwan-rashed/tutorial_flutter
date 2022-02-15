@@ -1,12 +1,30 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, unused_field, avoid_print
 
 import 'package:flutter/material.dart';
 import 'cart.dart';
 
-class Catalog extends StatelessWidget {
-  const Catalog({Key? key}) : super(key: key);
+class Catalog extends StatefulWidget {
+  @override
+  _CatalogState createState() => _CatalogState();
+}
 
-  static const products = ['Product 001', 'Product 002', 'Product 003'];
+class _CatalogState extends State<Catalog> {
+  // const Catalog({Key? key}) : super(key: key);
+
+  static const products = [
+    'Product 001',
+    'Product 002',
+    'Product 003',
+    'Product 004',
+    'Product 005',
+    'Product 006',
+    'Product 007',
+    'Product 008',
+    'Product 009',
+  ];
+
+  List _selected = [];
+  List _selectedState = [];
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +38,7 @@ class Catalog extends StatelessWidget {
               onPressed: () => {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Cart()),
+                  MaterialPageRoute(builder: (context) => Cart(_selectedState)),
                 )
               },
             ),
@@ -45,8 +63,30 @@ class Catalog extends StatelessWidget {
                           children: [
                             Text(products[index]),
                             IconButton(
-                              icon: Icon(Icons.add_shopping_cart_sharp),
-                              onPressed: () => {},
+                              icon: Icon(_selected.contains(products[index])
+                                  ? Icons.remove_shopping_cart_sharp
+                                  : Icons.add_shopping_cart_sharp),
+                              color: _selected.contains(products[index])
+                                  ? Colors.red
+                                  : Colors.green,
+                              onPressed: () => {
+                                if (_selected.contains(products[index]))
+                                  {
+                                    _selected.remove(products[index]),
+                                    setState(() {
+                                      _selectedState = _selected;
+                                    }),
+                                    print(_selected)
+                                  }
+                                else
+                                  {
+                                    _selected.add(products[index]),
+                                    setState(() {
+                                      _selectedState = _selected;
+                                    }),
+                                    print(_selected)
+                                  }
+                              },
                             ),
                           ],
                         ),

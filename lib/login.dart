@@ -63,8 +63,7 @@ class _LoginState extends State<Login> {
                       });
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Catalog()),
+                        MaterialPageRoute(builder: (context) => Catalog()),
                       );
                     } else {
                       showDialog<String>(
