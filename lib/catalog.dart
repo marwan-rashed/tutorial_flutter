@@ -11,16 +11,40 @@ class Catalog extends StatefulWidget {
 class _CatalogState extends State<Catalog> {
   // const Catalog({Key? key}) : super(key: key);
 
+  // static const products = [
+  //   'Product 001',
+  //   'Product 002',
+  //   'Product 003',
+  //   'Product 004',
+  //   'Product 005',
+  //   'Product 006',
+  //   'Product 007',
+  //   'Product 008',
+  //   'Product 009',
+  // ];
+
+  // static const prices = [
+  //   10,
+  //   05,
+  //   15,
+  //   22,
+  //   35,
+  //   07,
+  //   80,
+  //   43,
+  //   29,
+  // ];
+
   static const products = [
-    'Product 001',
-    'Product 002',
-    'Product 003',
-    'Product 004',
-    'Product 005',
-    'Product 006',
-    'Product 007',
-    'Product 008',
-    'Product 009',
+    {'name': 'product 001', 'price': 10},
+    {'name': 'product 002', 'price': 05},
+    {'name': 'product 003', 'price': 30},
+    {'name': 'product 004', 'price': 42},
+    {'name': 'product 005', 'price': 56},
+    {'name': 'product 006', 'price': 77},
+    {'name': 'product 007', 'price': 18},
+    {'name': 'product 008', 'price': 06},
+    {'name': 'product 009', 'price': 11},
   ];
 
   List _selected = [];
@@ -61,7 +85,10 @@ class _CatalogState extends State<Catalog> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(products[index]),
+                            // Text(products[index]),
+                            // Text(prices[index].toString() + r' $'),
+                            Text(products[index]['name'].toString()),
+                            Text(products[index]['price'].toString() + r' $'),
                             IconButton(
                               icon: Icon(_selected.contains(products[index])
                                   ? Icons.remove_shopping_cart_sharp
