@@ -11,30 +11,6 @@ class Catalog extends StatefulWidget {
 class _CatalogState extends State<Catalog> {
   // const Catalog({Key? key}) : super(key: key);
 
-  // static const products = [
-  //   'Product 001',
-  //   'Product 002',
-  //   'Product 003',
-  //   'Product 004',
-  //   'Product 005',
-  //   'Product 006',
-  //   'Product 007',
-  //   'Product 008',
-  //   'Product 009',
-  // ];
-
-  // static const prices = [
-  //   10,
-  //   05,
-  //   15,
-  //   22,
-  //   35,
-  //   07,
-  //   80,
-  //   43,
-  //   29,
-  // ];
-
   static const products = [
     {'name': 'product 001', 'price': 10},
     {'name': 'product 002', 'price': 05},
