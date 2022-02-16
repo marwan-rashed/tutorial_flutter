@@ -61,7 +61,7 @@ class _LoginState extends State<Login> {
                         _username = '';
                         _password = '';
                       });
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => Catalog()),
                       );

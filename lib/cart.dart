@@ -1,9 +1,9 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 
 class Cart extends StatelessWidget {
-  List products = [];
+  final List products;
   Cart(this.products, {Key? key}) : super(key: key);
 
   @override
