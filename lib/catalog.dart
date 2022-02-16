@@ -85,8 +85,6 @@ class _CatalogState extends State<Catalog> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            // Text(products[index]),
-                            // Text(prices[index].toString() + r' $'),
                             Text(products[index]['name'].toString()),
                             Text(products[index]['price'].toString() + r' $'),
                             IconButton(
