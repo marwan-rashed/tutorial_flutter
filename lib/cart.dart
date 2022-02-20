@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_print, prefer_const_constructors_in_immutables, prefer_const_constructors
+// ignore_for_file: avoid_print, prefer_const_constructors_in_immutables, prefer_const_constructors, avoid_function_literals_in_foreach_calls
 
 import 'package:flutter/material.dart';
+import 'catalog.dart';
 
 class Cart extends StatelessWidget {
   final List products;
@@ -53,7 +54,38 @@ class Cart extends StatelessWidget {
                   child: const Text('Continue Shopping'),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    int total = 0;
+
+                    products.forEach((element) {
+                      total += int.parse(element['price'].toString());
+                    });
+
+                    print(total);
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Alert !'),
+                        content: Text('Total amount is $total \$'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'Cancel'),
+                            child: const Text('Cancel'),
+                          ),
+                          TextButton(
+                            onPressed: () => {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Catalog()),
+                              )
+                            },
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                   child: const Text('Checkout'),
                 )
               ],
