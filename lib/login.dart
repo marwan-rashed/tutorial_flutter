@@ -3,6 +3,12 @@
 import 'package:flutter/material.dart';
 import 'catalog.dart';
 
+/// StatefulWidget
+///
+/// Stateful widget means that the widget has a mutable state that can be changed during widget's lifetime
+/// StatefulWidget consist of 2 classes :
+///   1 - The main class that extend StatefulWidget class (in this case "Login")
+///   2 -  Another Class (in this case "_LoginState") that extends State Class
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -14,11 +20,34 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    /// Scaffold
+    ///
+    /// Scaffold is a built-in class in flutter provides many widgets (or APIs) that we can use
+    /// Scaffold provides a framework to implement material design layout in the App.
+    /// Scaffold will expand and occupy all available space
     return Scaffold(
+
+        /// AppBar
+        ///
+        /// is a material design class shown as a horizontal bar at the top of the screen
+        /// used with Scaffold by Scaffold.appBar property
         appBar: AppBar(
           title: const Text('Shopping Cart'),
         ),
+
+        /// Scaffold.body
+        ///
+        /// is a property in Scaffold class that represent the main content of the scaffold
+        /// Scaffold.body appear below the appBar
+
+        /// Center
+        ///
+        /// is a basic widget in flutter that take one child and place it in the middle of the screen
         body: Center(
+          /// Column
+          ///
+          /// A widget that take an array of widgets (children) and display them vertically
+          /// Column widget doesn't support scrolling
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
