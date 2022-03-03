@@ -51,9 +51,21 @@ class _LoginState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              /// Padding Class
+              ///
+              /// Padding class in flutter used to add empty space around an object
+              /// Padding has two properties (child and padding)
               Padding(
                 padding: EdgeInsets.all(10),
+
+                /// TextField Class
+                ///
+                /// TextField is an input element that allow user to enter text
+                /// It has many props like decoration, onChanged, ..., etc
                 child: TextField(
+                  /// TextField.onChanged
+                  ///
+                  /// A TextField property that hold a function and execute it every time value changed
                   onChanged: (value) {
                     setState(() {
                       _username = value;
@@ -82,6 +94,10 @@ class _LoginState extends State<Login> {
               ),
               Padding(
                 padding: EdgeInsets.all(10),
+
+                /// ElevatedButton
+                ///
+                /// ElevatedButton is a material design widget that allow user to interact with the app by pressing it
                 child: ElevatedButton(
                   child: Text('Login'),
                   onPressed: () {
@@ -95,6 +111,10 @@ class _LoginState extends State<Login> {
                         MaterialPageRoute(builder: (context) => Catalog()),
                       );
                     } else {
+                      /// showDialog
+                      ///
+                      /// a material design alert dialog, to inform user with some information
+                      /// it consists of title, content and a list of actions
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
