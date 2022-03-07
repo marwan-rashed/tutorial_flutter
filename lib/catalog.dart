@@ -33,6 +33,14 @@ class _CatalogState extends State<Catalog> {
           title: const Text('Catalog'),
           automaticallyImplyLeading: false,
           actions: [
+            /// IconButton
+            ///
+            /// A material design widgets consist of an icon printed on a widget that respond to touches
+            /// IconButton acts as a Button
+            ///
+            /// Commonly used in AppBar.actions field
+            ///
+            /// Note : if onPressed callback assigned to null the button will disabled
             IconButton(
               icon: const Icon(Icons.shopping_cart),
               onPressed: () => {
@@ -46,6 +54,11 @@ class _CatalogState extends State<Catalog> {
         ),
         body: Padding(
           padding: EdgeInsets.all(5),
+
+          /// FractionallySizedBox
+          ///
+          /// A flutter widget that sizes its child to a fraction of total available space
+          /// It takes one child and sizes it to a fraction of an available space according to widthFactor and heightFactor props
           child: FractionallySizedBox(
               widthFactor: 1,
               child: ListView.builder(
@@ -58,6 +71,11 @@ class _CatalogState extends State<Catalog> {
                             border: Border(
                                 bottom: BorderSide(
                                     color: Colors.blue, width: 1.0))),
+
+                        /// Row
+                        ///
+                        /// A widget that take an array of widgets (children) and display them horizontally
+                        /// Row widget doesn't support scrolling
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
