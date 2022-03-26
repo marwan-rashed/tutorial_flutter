@@ -3,6 +3,12 @@
 import 'package:flutter/material.dart';
 import 'catalog.dart';
 
+/// StatelessWidget
+///
+/// Stateless Widget is an immutable widget, that can't change during its life cycle
+/// All variables are final in Stateless Widgets
+///
+/// Ex. : Text, Icon, etc ...
 class Cart extends StatelessWidget {
   final List products;
   Cart(this.products, {Key? key}) : super(key: key);
@@ -21,7 +27,18 @@ class Cart extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                /// Expanded
+                ///
+                /// A widget that expands a child of a row or column to fill all available space along the main axis
+                ///
+                /// If multiple children are expanded, the available space is divided among them
                 Expanded(
+                  /// ListView.builder
+                  ///
+                  /// A widget that creates a scrollable, linear array of widgets
+                  ///
+                  /// ListView constructor works well for small lists, but for lists with big number of elements we use ListView.builder
+                  /// This constructor is more powerful because it creates layout only for items visible on screen and lazily build other items when user scrolls
                   child: ListView.builder(
                     itemCount: products.length,
                     itemBuilder: (context, index) {
